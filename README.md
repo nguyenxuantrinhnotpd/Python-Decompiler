@@ -80,27 +80,13 @@ Stack Remaining: []
 ```
 ---
 
-📈 Future Improvements
-
-Add support for more opcodes (e.g. BINARY_OP, JUMP_FORWARD)
-
-Handle control flow structures (if, for, while)
-
-Function and class reconstruction
-
-Inline comments for instruction mapping
-
-
-
----
-
-📝 License
+### 📝 License
 
 This project is open-source and free to use or modify.
 
 
 ---
 
-📫 Contact
+##2 📫 Contact
 
-Telegram: @CalceIsMe
+Telegram: [@CalceIsMe](https://t.me/CalceIsMe)
