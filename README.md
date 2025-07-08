@@ -87,6 +87,6 @@ This project is open-source and free to use or modify.
 
 ---
 
-##2 📫 Contact
+### 📫 Contact
 
 Telegram: [@CalceIsMe](https://t.me/CalceIsMe)
