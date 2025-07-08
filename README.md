@@ -60,8 +60,8 @@ The decompiler processes bytecode as follows:
 ```python
 print("Hello World!")
 print(a, b)
-
-Output:
+```
+### Output:
 
 LOAD_NAME
 LOAD_CONST
@@ -77,31 +77,6 @@ print('Hello World!')
 print(a, b)
 ====================
 Stack Remaining: []
-
-
----
-
-💻 Usage
-
-from your_file import DECOMPILER
-
-code = '''
-print("Hello World!")
-print(a, b)
-'''
-bytecode = compile(code, "<string>", "exec")
-DECOMPILER(bytecode).decompile()
-
-
----
-
-📦 Requirements
-
-Python 3.9+ (for ast.unparse)
-
-No external dependencies
-
-
 
 ---
 
