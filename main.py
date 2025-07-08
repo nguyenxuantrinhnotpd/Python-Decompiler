@@ -5,7 +5,7 @@
 THIS IS A SIMPLE DECOMPILER THAT SUPPORTS SIMPLE PYTHON OPCODES.
 IF YOU WANT MORE, THEN CODE TO SUPPORT OTHER OPCODES.
 """
-import dis, ast
+import dis
 class DECOMPILER:
     def __init__(self, bytecode):
         self.bytecode = bytecode
@@ -15,7 +15,6 @@ class DECOMPILER:
     def decompile(self):
         opcodes = []
         for instr in dis.get_instructions(self.bytecode):
-            opcodes.append(instr.opname)
             if instr.opname == 'RESUME':
                 pass
             elif instr.opname == 'PUSH_NULL':
@@ -30,10 +29,11 @@ class DECOMPILER:
                     args.append(self.stack.pop())
                 args = args[::-1]
                 func = self.stack.pop()
-                self.source_code.append(f"{func}({', '.join(args)})")
+                self.stack.pop()
+                self.stack.append(f"{func}({', '.join(args)})")
             elif instr.opname == 'POP_TOP':
                 if self.stack:
-                    self.stack.pop()
+                    self.source_code.append(self.stack.pop())
             elif instr.opname == 'RETURN_CONST':
                 v = instr.argval
                 if self.in_function:
@@ -42,20 +42,18 @@ class DECOMPILER:
                     else:
                         self.source_code.append(f"return {repr(v)}")
             else:
-                self.source_code.append(f" Unsupported Opcode {instr.opname}")
+                self.source_code.append(f"# Unsupported Opcode {instr.opname}")
+            opcodes.append(instr.opname)
         for opcode in opcodes:
             print(opcode)
         print("= "*10)
         self.source_code = '\n'.join(self.source_code)
-        tree = ast.parse(self.source_code)
-        ast.fix_missing_locations(tree)
-        self.source_code = (ast.unparse(tree))
         print(self.source_code)
         print("= "*10)
         print("Stack Remaning:",self.stack)
 code = """
-print("Hello World!")
-print(a,b)
+print("Hello Wolrd!")
+print(a, b)
 """
 bytecode = compile(code,"<string>","exec")
 dis.dis(bytecode)
