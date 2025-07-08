@@ -28,10 +28,7 @@ The decompiler processes bytecode as follows:
 3. **Opcode Handling**  
    Each recognized opcode is translated into a corresponding line of source code (e.g., function calls, return statements).
 
-4. **AST Formatting**  
-   Reconstructed code is passed through Python’s `ast` module to format it and ensure syntactic correctness.
-
-5. **Output**  
+4. **Output**  
    Displays:
    - List of opcodes encountered
    - Decompiled source code
