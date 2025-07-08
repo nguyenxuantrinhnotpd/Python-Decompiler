@@ -80,13 +80,13 @@ Stack Remaining: []
 ```
 ---
 
-### 📝 License
+## 📝 License
 
 This project is open-source and free to use or modify.
 
 
 ---
 
-### 📫 Contact
+## 📫 Contact
 
 Telegram: [@CalceIsMe](https://t.me/CalceIsMe)
