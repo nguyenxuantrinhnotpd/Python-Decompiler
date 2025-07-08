@@ -62,7 +62,7 @@ print("Hello World!")
 print(a, b)
 ```
 ### Output:
-
+```python
 LOAD_NAME
 LOAD_CONST
 CALL
@@ -77,7 +77,7 @@ print('Hello World!')
 print(a, b)
 ====================
 Stack Remaining: []
-
+```
 ---
 
 📈 Future Improvements
